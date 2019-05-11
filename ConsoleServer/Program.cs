@@ -14,7 +14,7 @@ namespace ConsoleServer
         {
             Socket s = new Socket(AddressFamily.InterNetwork,
                 SocketType.Stream, ProtocolType.IP);
-            IPAddress ip = IPAddress.Parse("127.0.0.1");
+            IPAddress ip = IPAddress.Parse("10.7.180.167");// IPAddress.Parse("127.0.0.1");
             IPEndPoint ep = new IPEndPoint(ip, 1098);
             Console.Title = "Server " + ep.ToString();
             s.Bind(ep); //Наш сокет звязаний з даною адресою
