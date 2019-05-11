@@ -32,6 +32,10 @@ namespace ConsoleServer
 
                     data += Encoding.UTF8.GetString(bytes, 0, bytesRec);
                     Console.WriteLine("Нам прислали: " + data);
+                    Console.WriteLine(ns.RemoteEndPoint.ToString());
+                    ns.Send(Encoding.ASCII.GetBytes($"Vova server {DateTime.Now}"));
+                    ns.Shutdown(SocketShutdown.Both);
+                    ns.Close();
 
                 }
             }
